@@ -1,0 +1,5 @@
+Bentley is part of the marketing research team, he wants to make sure the app built will feature only the items in its catalog that are the most likely to sell. They expect an app that will flawlessly display data of the most liked dresses by users, based on how many times the item was chosen when displayed.
+
+Alejandra is from Washington. She enjoys traveling and exploring new surroundings. She likes to spend evenings dining out with friends and trying out new cocktail bars in town. She is fully aware of what the latest trends are.
+
+Melina is from Arizona. She likes to spend her free time venturing outside in the wilderness, has a more casual style and likes to spend some of her free time hiking with her friends. From time to time she will go to the stores and see what is currently in style. 
