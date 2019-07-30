@@ -1,5 +1,4 @@
-import store from '../src/data/store.js'
-import dresses from '../src/data/dresses.js';
+import store from '../src/data/store.js';
 
 const test = QUnit.test;
 
@@ -13,10 +12,10 @@ QUnit.testStart(() => {
 
 test('get and save', (assert) => {
     const key = 'dress';
-    const dress = { name: 'black dress' }
+    const dress = { name: 'black dress' };
 
     store.save(key, dress);
     const got = store.get(key);
 
     assert.deepEqual(got, dress);
-})
+});
