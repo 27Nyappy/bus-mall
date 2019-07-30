@@ -25,4 +25,4 @@ test('gets products with bootstrapped default', (assert) => {
     const dresses = store.getDresses();
 
     assert.deepEqual(dresses, dressData);
-})
+});
