@@ -1,5 +1,6 @@
 const store = {
     storage: window.localStorage,
+    
     save(key, item) {
         const json = JSON.stringify(item);
         store.storage.setItem(key, json);

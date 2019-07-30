@@ -17,7 +17,8 @@
     <main>
         <h2>Select Preferred Product</h2>
 
-        <div>
+        <div class="img-div">
+
             <label>
                 <input name="dress" type="radio"></input>
                 <img class="image" src="assets/dress1.jpg">
@@ -33,6 +34,20 @@
                 <img class="image" src="assets/dress3.jpg">
             </label>
 
+        </div>
+
+        <div class="click-data hidden">
+            <label class="data">
+                Image: <img id="image-clicks" src="assets/dress1.jpg">
+            </label>
+
+            <label class="data">
+                Clicked: <span id="clicked"></span>
+            </label>
+
+            <label class="data">
+                Percentage Clicked When Shown: <span id="percentage"></span>
+            </label>
         </div>
     </main>
 
