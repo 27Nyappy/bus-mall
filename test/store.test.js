@@ -1,4 +1,5 @@
 import store from '../src/data/store.js';
+import dressData from '../src/data/dresses.js';
 
 const test = QUnit.test;
 
@@ -19,3 +20,9 @@ test('get and save', (assert) => {
 
     assert.deepEqual(got, dress);
 });
+
+test('gets products with bootstrapped default', (assert) => {
+    const dresses = store.getDresses();
+
+    assert.deepEqual(dresses, dressData);
+})
