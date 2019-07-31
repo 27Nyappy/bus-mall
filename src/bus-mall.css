@@ -32,6 +32,12 @@ h2 {
     border-radius: 3px;
 }
 
+.img-div ul {
+    display: inherit;
+    margin-top: -15px;
+    margin-left: -19px;
+}
+
 input {
     visibility: hidden;
 }
@@ -81,6 +87,7 @@ label {
 
 li {
     list-style: none;
+    display: inline;
 }
 
 p {
