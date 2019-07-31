@@ -10,6 +10,22 @@ class dressCombination {
         const dress = this.list[index];
         return dress;
     }
+
+    removeById(dressId) {
+        const list = this.list;
+        for(let i = 0; i < list.length; i++) {
+            const dress = list[i];
+            if(dress.id === dressId) {
+                list.splice(i,3);
+                return;
+            }
+        }
+    }
+
+    hasDresses() {
+        return this.list.length > 0;
+    }
+
 }
 
 export default dressCombination;

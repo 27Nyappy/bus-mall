@@ -59,11 +59,6 @@ const dresses = [
         name: 'Fancy BlackDress',
         image: 'assets/dress12.jpg'
     },
-    {
-        id: 'pink-party-dress',
-        name: 'Pink Party Dress',
-        image: 'assets/dress13.jpg'
-    },
 ];
 
 export default dresses;
