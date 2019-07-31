@@ -6,7 +6,7 @@ function renderOutput(clickId, dress) {
     li.appendChild(label1);
 
     const p = document.createElement('p');
-    p.textContent = 'Image:'
+    p.textContent = 'Image:';
     label1.appendChild(p);
 
     const img = document.createElement('img');
@@ -36,6 +36,6 @@ function renderOutput(clickId, dress) {
     label3.appendChild(span2);
 
     return li;
-};
+}
 
 export default renderOutput;
