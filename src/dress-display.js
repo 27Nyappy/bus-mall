@@ -42,6 +42,6 @@ function renderDresses(item1, item2, item3) {
     li3.appendChild(img3);
 
     return ul;
-};
+}
 
 export default renderDresses;
