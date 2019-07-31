@@ -36,6 +36,6 @@ function renderOutput(clickId, dress) {
     label3.appendChild(span2);
 
     return li;
-}
+};
 
 export default renderOutput;

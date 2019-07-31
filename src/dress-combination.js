@@ -16,7 +16,7 @@ class dressCombination {
         for(let i = 0; i < list.length; i++) {
             const dress = list[i];
             if(dress.id === dressId) {
-                list.splice(i,3);
+                list.splice(i, 3);
                 return;
             }
         }

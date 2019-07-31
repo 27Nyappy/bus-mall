@@ -1,4 +1,4 @@
-import dressData  from '../src/data/dresses.js';
+import dressData from '../src/data/dresses.js';
 import DressCombination from '../src/dress-combination.js';
 
 const test = QUnit.test;
