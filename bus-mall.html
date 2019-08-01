@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus Mall</title>
+    <link rel="stylesheet" href="src/bus-mall.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Bus Mall</h1>
+    </header>
+
+    <main>
+        <a href="./chart.html">Chart</a>
+        <h2>Select Preferred Product</h2>
+
+        <div id="img-div"></div>
+
+        <div id="click-data" class="hidden">
+            <ul>
+                <li>
+                    <label class="data">
+                        <p>
+                            Image:
+                        </p>
+                        <img class="image-clicks" src="assets/dress1.jpg">
+                    </label>
+
+                    <label class="data label1">
+                        Clicked: <span id="clicked">0</span>
+                    </label>
+
+                    <label class="data label2">
+                        Percentage Clicked When Shown: <span id="percentage">0</span>
+                    </label>
+                </li>
+
+            </ul>
+
+        </div>
+    </main>
+
+
+    <script type="module" src="src/bus-mall.js"></script>
+</body>
+
+</html>

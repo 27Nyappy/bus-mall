@@ -1,0 +1,119 @@
+body {
+    text-align: center;
+    background-image: url('../assets/wardrobe.jpg')
+}
+
+h1 {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 50pt;
+    color: antiquewhite;
+    background: rgb(51, 27, 1);
+    text-shadow: 1px 2px 2px rgb(185, 142, 66);
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30pt;
+    color: antiquewhite;
+    text-shadow: 1px 2px 2px rgb(185, 142, 66);
+    background: rgb(51, 27, 1);
+    border-radius: 30px;
+}
+
+#img-div {
+    display: flex;
+    justify-content: space-around;
+    background: rgb(51, 27, 1);;
+    max-width: 500px;
+    height: 250px;
+    margin: 0 auto;
+    box-shadow: 4px 5px 7px rgb(92, 85, 66);
+    border-radius: 3px;
+}
+
+input {
+    visibility: hidden;
+    position: absolute;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:checked + .image {
+    border: 3px solid rgb(241, 107, 18);
+}
+
+label {
+    width: 200px;
+    height: 200px;
+}
+
+.image {
+    width: 120px;
+    height: 200px;
+    margin-top: 5px;
+    margin-right: 16px;
+    cursor: pointer;
+    border: 2px solid rgb(224, 178, 50);
+}
+
+.image:hover {
+    box-shadow: 1px 2px 2px rgb(228, 116, 42);
+    transform: translate3d(-1px, -1px, 0);
+    border: 2px solid rgb(228, 116, 42);
+}
+
+#click-data {
+    display: flex;
+    justify-content: space-around;
+    background: rgb(51, 27, 1);
+    margin: 20px auto;
+    width: 600px;
+    box-shadow: 4px 5px 7px rgb(92, 85, 66);
+    border-radius: 3px;
+    color: antiquewhite;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+li {
+    list-style: none;
+    display: inline;
+}
+
+p {
+    float: left;
+    margin-top: 2px;
+}
+
+.image-clicks {
+    margin-left: 10px;
+    width: 90px;
+    height: 160px;
+}
+
+.label1 {
+    float: right;
+}
+
+.label2 {
+    float: right;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    background: rgba(39, 19, 1, 0.8);
+    color: antiquewhite;
+    text-decoration: none;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 16pt;
+}
