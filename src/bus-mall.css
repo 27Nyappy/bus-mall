@@ -10,6 +10,7 @@ h1 {
     background: rgb(51, 27, 1);
     text-shadow: 1px 2px 2px rgb(185, 142, 66);
     border-radius: 20px;
+    margin-bottom: 12px;
 }
 
 h2 {
@@ -102,4 +103,17 @@ p {
 
 .label2 {
     float: right;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    background: rgba(39, 19, 1, 0.8);
+    color: antiquewhite;
+    text-decoration: none;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 16pt;
 }
