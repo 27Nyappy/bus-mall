@@ -21,7 +21,7 @@ function renderOutput(clickId, dress) {
     li.appendChild(label2);
 
     const span1 = document.createElement('span');
-    span1.className = 'clicked';
+    span1.id = 'clicked';
     span1.textContent = clickId.clicks;
     label2.appendChild(span1);
 
@@ -31,7 +31,7 @@ function renderOutput(clickId, dress) {
     li.appendChild(label3);
 
     const span2 = document.createElement('span');
-    span2.className = 'percentage';
+    span2.id = 'percentage';
     span2.textContent = clickId.percentage;
     label3.appendChild(span2);
 

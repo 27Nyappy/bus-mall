@@ -21,7 +21,7 @@ h2 {
     border-radius: 30px;
 }
 
-.img-div {
+#img-div {
     display: flex;
     justify-content: space-around;
     background: rgb(51, 27, 1);;
@@ -32,14 +32,9 @@ h2 {
     border-radius: 3px;
 }
 
-.img-div ul {
-    display: inherit;
-    margin-top: -15px;
-    margin-left: -19px;
-}
-
 input {
     visibility: hidden;
+    position: absolute;
 }
 
 input:hover {
@@ -58,7 +53,7 @@ label {
 .image {
     width: 120px;
     height: 200px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-right: 16px;
     cursor: pointer;
     border: 2px solid rgb(224, 178, 50);
@@ -70,7 +65,7 @@ label {
     border: 2px solid rgb(228, 116, 42);
 }
 
-.click-data {
+#click-data {
     display: flex;
     justify-content: space-around;
     background: rgb(51, 27, 1);

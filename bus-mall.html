@@ -17,33 +17,35 @@
     <main>
         <h2>Select Preferred Product</h2>
 
-        <div class="img-div">
+        <div id="img-div">
 
             <ul id="set-of-three">
-                <li>
-                    <input name="dress" type="radio">
-                    <img class="image" src="assets/dress1.jpg">
+                <li class="dress-input">
+                    <label>
+                        <input name="dress" type="radio" value="">
+                        <img class="image" src="assets/dress1.jpg">
+                    </label>
                 </li>
 
-                <li>
-                    <input name="dress" type="radio">
-                    <img class="image" src="assets/dress2.jpg">
+
+                <li class="dress-input">
+                    <label>
+                        <input name="dress" type="radio" value="">
+                        <img class="image" src="assets/dress2.jpg">
+                    </label>
                 </li>
 
-                <li>
-                    <input name="dress" type="radio">
-                    <img class="image" src="assets/dress3.jpg">
+                <li class="dress-input">
+                    <label>
+                        <input name="dress" type="radio" value="">
+                        <img class="image" src="assets/dress3.jpg">
+                    </label>
                 </li>
             </ul>
 
-
-
-
-
-
         </div>
 
-        <div class="click-data hidden">
+        <div id="click-data" class="hidden">
             <ul>
                 <li>
                     <label class="data">
@@ -54,11 +56,11 @@
                     </label>
 
                     <label class="data label1">
-                        Clicked: <span class="clicked">0</span>
+                        Clicked: <span id="clicked">0</span>
                     </label>
 
                     <label class="data label2">
-                        Percentage Clicked When Shown: <span class="percentage">0</span>
+                        Percentage Clicked When Shown: <span id="percentage">0</span>
                     </label>
                 </li>
 
