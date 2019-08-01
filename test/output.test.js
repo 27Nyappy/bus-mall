@@ -17,22 +17,14 @@ test('render output', (assert) => {
 });
 
 test('render three dresses', (assert) => {
-    const item1 = {
+    const item = {
         id: 'casual-black-dress',
         image: 'assets/dress1.jpg',
     };
-    const item2 = {
-        id: 'casual-black-red-dress',
-        image: 'assets/dress2.jpg',
-    };
-    const item3 = {
-        id: 'colorful-dress',
-        image: 'assets/dress3.jpg'
-    };
 
-    const expected = '<ul id="set-of-three"><li class="dress-input"><label><input name="dress" type="radio" value="casual-black-dress"><img class="image" src="assets/dress1.jpg"></label></li><li class="dress-input"><label><input name="dress" type="radio" value="casual-black-red-dress"><img class="image" src="assets/dress2.jpg"></label></li><li class="dress-input"><label><input name="dress" type="radio" value="colorful-dress"><img class="image" src="assets/dress3.jpg"></label></li></ul>';
+    const expected = '<li class="dress-input"><label><input name="dress" type="radio" value="casual-black-dress"><img class="image" src="assets/dress1.jpg"></label></li>';
 
-    const dom = renderDresses(item1, item2, item3);
+    const dom = renderDresses(item);
     const html = dom.outerHTML;
 
     assert.equal(html, expected);
