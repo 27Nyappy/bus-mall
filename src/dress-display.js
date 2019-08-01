@@ -1,5 +1,4 @@
 function renderDresses(item) {
-
     const li = document.createElement('li');
     li.className = 'dress-input';
 

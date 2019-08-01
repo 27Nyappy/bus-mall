@@ -83,6 +83,8 @@ label {
 li {
     list-style: none;
     display: inline;
+    margin: auto;
+    margin-right: 20px;
 }
 
 p {

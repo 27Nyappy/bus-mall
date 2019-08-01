@@ -17,13 +17,9 @@ let count = 0;
 
 const newDress = new DressCombination(dresses);
 
-
-let arr = [];
-
 for(let i = 0; i < 3; i++) {
     const product = newDress.getRandomDress();
     newDress.removeById(product.id);
-    arr.push(product);
+    const dress = renderDresses(product);
+    dressChoices.appendChild(dress);
 }
-const dressRender = renderDresses(arr[0], arr[1], arr[2]);
-dressChoices.appendChild(dressRender);
