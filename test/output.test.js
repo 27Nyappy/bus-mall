@@ -22,7 +22,7 @@ test('render three dresses', (assert) => {
         image: 'assets/dress1.jpg',
     };
 
-    const expected = '<li class="dress-input"><label><input name="dress" type="radio" value="casual-black-dress"><img class="image" src="assets/dress1.jpg"></label></li>';
+    const expected = '<li class="dress-input"><label><input name="dress" type="radio" class="dressy" value="casual-black-dress"><img class="image" src="assets/dress1.jpg"></label></li>';
 
     const dom = renderDresses(item);
     const html = dom.outerHTML;

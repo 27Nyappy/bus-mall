@@ -6,7 +6,7 @@ import renderOutput from './output.js';
 import renderDresses from './dress-display.js';
 
 const dressInputs = document.querySelectorAll('.dressInput');
-const radioInputs = document.getElementsByClassName('dressy');
+
 const dressChoices = document.getElementById('img-div');
 const statistics = document.getElementById('click-data');
 const clickCount = document.getElementById('clicked');
@@ -16,23 +16,53 @@ let turns = 25;
 let count = 0;
 
 const products = store.getDresses();
-const newDress = new DressCombination(dresses);
 
-showDresses();
+pageLoad();
 
-function showDresses() {
-    let tinyDressSet = newDress;
+
+function pageLoad() {
+    window.onload = shuffle();
+}
+
+// function showDresses() {
+//     const radioInputs = document.getElementsByClassName('dressy');
+//     console.log(radioInputs);
+//     for (let i = 0; i < radioInputs.length; i++) {
+//         radioInputs[i].addEventListener('click', () => {
+//             console.log('event listener');
+//             turns--;
+//             removeDresses();
+//             shuffle();
+            
+//         })
+//     }
+// }  
+
+function shuffle () {
+    const newDress = new DressCombination(dresses);
     
-    for(let i = 0; i < 3; i++) {
-        const product = tinyDressSet.getRandomDress();
-        tinyDressSet.removeById(product.id);
-        const dress = renderDresses(product);
-        dressChoices.appendChild(dress);
-    }
-    
-    for(let i = 0; i < radioInputs.length; i++) {
+        for (let i = 0; i < 3; i++) {
+           
+            const product = newDress.getRandomDress();
+            const dress = renderDresses(product);
+            dressChoices.appendChild(dress);
+            newDress.removeById(product.id);
+        }
+        const radioInputs = document.getElementsByClassName('dressy');
+    console.log(radioInputs);
+    for (let i = 0; i < radioInputs.length; i++) {
         radioInputs[i].addEventListener('click', () => {
+            console.log('event listener');
             turns--;
+            removeDresses();
+            shuffle();
+            
         })
+    }
+    }
+
+function removeDresses() {
+    while(dressChoices.firstChild) {
+    dressChoices.removeChild(dressChoices.firstChild);
     }
 }
