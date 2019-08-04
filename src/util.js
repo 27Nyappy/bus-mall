@@ -12,3 +12,17 @@ export function findDress(dress, id) {
         }
     }
 }
+
+export function outputCalc(clickId) {
+    const percentCalc = Math.floor((clickId.clicks / clickId.views) * 100);
+    const percent = `${percentage}%`;
+
+    const calc = {
+        depiction: clickId.image,
+        views: clickId.views,
+        clicks: clickId.clicks,
+        percent: percent
+    };
+
+    return calc;
+}

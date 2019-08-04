@@ -1,4 +1,8 @@
+import { outputCalc } from './util.js';
+
 function renderOutput(clickId, dress) {
+    const calc = outputCalc(clickId);
+
     const li = document.createElement('li');
 
     const label1 = document.createElement('label');
@@ -32,7 +36,7 @@ function renderOutput(clickId, dress) {
 
     const span2 = document.createElement('span');
     span2.id = 'percentage';
-    span2.textContent = clickId.percentage;
+    span2.textContent = clickId.percent;
     label3.appendChild(span2);
 
     return li;

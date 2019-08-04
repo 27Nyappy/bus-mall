@@ -5,17 +5,16 @@ import { getRandom, findDress } from './util.js';
 import renderOutput from './output.js';
 import renderDresses from './dress-display.js';
 
-const dressInputs = document.querySelectorAll('.dressInput');
-
+const radioInputs = document.getElementsByClassName('dressy');
 const dressChoices = document.getElementById('img-div');
 const statistics = document.getElementById('click-data');
 const clickCount = document.getElementById('clicked');
 const percentageDisplay = document.getElementById('percentage');
 
 let turns = 25;
-let count = 0;
 
 const products = store.getDresses();
+let newDress = new DressCombination(dresses);
 
 pageLoad();
 
@@ -24,45 +23,43 @@ function pageLoad() {
     window.onload = shuffle();
 }
 
-// function showDresses() {
-//     const radioInputs = document.getElementsByClassName('dressy');
-//     console.log(radioInputs);
-//     for (let i = 0; i < radioInputs.length; i++) {
-//         radioInputs[i].addEventListener('click', () => {
-//             console.log('event listener');
-//             turns--;
-//             removeDresses();
-//             shuffle();
-            
-//         })
-//     }
-// }  
+function shuffle() {
 
-function shuffle () {
-    const newDress = new DressCombination(dresses);
-    
-        for (let i = 0; i < 3; i++) {
-           
-            const product = newDress.getRandomDress();
-            const dress = renderDresses(product);
-            dressChoices.appendChild(dress);
-            newDress.removeById(product.id);
-        }
-        const radioInputs = document.getElementsByClassName('dressy');
-    console.log(radioInputs);
+    if (turns <= 0) {
+        statistics.classList.remove('hidden');
+        dressChoices.classList.add('hidden');
+    }
+
+    if(newDress.list.length === 0) {
+        newDress = new DressCombination(dresses);
+    }
+
+    for (let i = 0; i < 3; i++) {
+        const product = newDress.getRandomDress();
+        const dress = renderDresses(product);
+        product.views++;
+        dressChoices.appendChild(dress);
+        newDress.removeById(product.id);
+    }
+
     for (let i = 0; i < radioInputs.length; i++) {
-        radioInputs[i].addEventListener('click', () => {
-            console.log('event listener');
+        radioInputs[i].addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(radioInputs[i].value);
             turns--;
             removeDresses();
             shuffle();
-            
         })
     }
-    }
+
+}
+
+const arr = [];
+
+
 
 function removeDresses() {
-    while(dressChoices.firstChild) {
-    dressChoices.removeChild(dressChoices.firstChild);
+    while (dressChoices.firstChild) {
+        dressChoices.removeChild(dressChoices.firstChild);
     }
 }
