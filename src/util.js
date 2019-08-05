@@ -15,7 +15,7 @@ export function findDress(dress, id) {
 
 export function outputCalc(clickId) {
     const percentCalc = Math.floor((clickId.clicks / clickId.views) * 100);
-    const percent = `${percentage}%`;
+    const percent = `${percentCalc}%`;
 
     const calc = {
         depiction: clickId.image,
