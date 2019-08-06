@@ -58,7 +58,7 @@ const store = {
 
     addToSeen(array, key) {
         const seenList = store.seen(key);
-
+    
         for(let i = 0; i < array.length; i++) {
             let seenDress = array[i];
 
@@ -70,6 +70,9 @@ const store = {
             }
         }
         store.save(key, seenList);
+    },
+    addToLastSeen(input1, input2, input3) {
+        store.save('last-shown', [{ id:input1, quantity: 1 }, { id: input2, quantity: 1 }, { id: input3, quantity: 1 }]);
     }
 };
 

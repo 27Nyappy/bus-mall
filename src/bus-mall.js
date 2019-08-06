@@ -16,8 +16,6 @@ let turns = 25;
 
 const products = store.getDresses();
 let newDress = new DressCombination(dresses);
-let shownDresses = {};
-let chosenDresses = {};
 
 pageLoad();
 
@@ -31,11 +29,18 @@ function shuffle() {
     if (turns <= 0) {
         statistics.classList.remove('hidden');
         dressChoices.classList.add('hidden');
-        
+
         const list = store.get('clicks-list');
+
+        for(let i = 0; i < list.length; i++) {
+            const clickedDress = list[i];
+            const dress = renderOutput(clickedDress);
+            seen.appendChild(dress);
+        }
+        
     }
 
-    if(newDress.list.length < 3) {
+    if (newDress.list.length < 3) {
         newDress = new DressCombination(dresses);
     }
 
@@ -46,6 +51,7 @@ function shuffle() {
         newDress.removeById(product.id);
     }
 
+
     for (let i = 0; i < radioInputs.length; i++) {
         radioInputs[i].addEventListener('click', (event) => {
             event.preventDefault();
@@ -53,7 +59,12 @@ function shuffle() {
             turns--;
             removeDresses();
             shuffle();
-        })
+        });
+        clickData(radioInputs);
+        function clickData(radioInputs) {
+            let shown = [];
+            shown.push(radioInputs[i].value);
+        }
     }
 
 }
