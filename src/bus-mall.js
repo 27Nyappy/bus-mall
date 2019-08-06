@@ -31,8 +31,8 @@ function shuffle() {
     if (turns <= 0) {
         statistics.classList.remove('hidden');
         dressChoices.classList.add('hidden');
-
-        renderDressSelections(chosenDresses, shownDresses, )
+        
+        const list = store.get('clicks-list');
     }
 
     if(newDress.list.length < 3) {
@@ -42,7 +42,6 @@ function shuffle() {
     for (let i = 0; i < 3; i++) {
         let product = newDress.getRandomDress();
         const dress = renderDresses(product);
-        count(shownDresses, dress.id);
         dressChoices.appendChild(dress);
         newDress.removeById(product.id);
     }
@@ -50,22 +49,13 @@ function shuffle() {
     for (let i = 0; i < radioInputs.length; i++) {
         radioInputs[i].addEventListener('click', (event) => {
             event.preventDefault();
-            console.log(radioInputs[i].value);
+            store.addToList(radioInputs[i].value, 'clicks-list');
             turns--;
-            count(chosenDresses, radioInputs[i].value);
             removeDresses();
             shuffle();
         })
     }
 
-}
-
-function count(products, id) {
-    if(products[id]) {
-        products[id] += 1;
-    } else {
-        products[id] = 1;
-    }
 }
 
 function removeDresses() {
