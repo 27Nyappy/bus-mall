@@ -2,11 +2,12 @@ import dressData from './dresses.js';
 
 const store = {
     storage: window.localStorage,
-    
+
     save(key, item) {
         const json = JSON.stringify(item);
         store.storage.setItem(key, json);
     },
+
     get(key) {
         const json = store.storage.getItem(key);
         const item = JSON.parse(json);
@@ -16,63 +17,58 @@ const store = {
     getDresses() {
         let dresses = store.get('dress');
 
-        if(!dresses) {
-            store.get('dress', dresses);
-            dresses = dressData;
+        if (!dresses) {
+            store.save('dress', dressData)
+            dresses = dressData
         }
         return dresses;
     },
 
-    createClickList(key) {
-        let list = store.get(key);
-        if(!list) {
-            list = [];
+    getDressArr() {
+        let arr = store.get('arr');
+
+        if (!arr) {
+            arr = [];
         }
-        return list;
+        return arr;
     },
 
-    addToList(clickValue, key) {
-        const list = store.createClickList(key);
-        let chosenDress = store.getDresses(list, clickValue);
+    addToResultsList(id) {
+        const dataList = store.getDresses()
+        const item = store.getById(dataList, id);
 
-        if(chosenDress) {
-            chosenDress.quantity++;
+        if (item) {
+            item.shown++;
         } else {
-            chosenDress = {
-                id: clickValue,
-                quantity: 1
+            const item = {
+                id: id,
+                shown: 1,
+                clicks: 0
             };
-            list.push(chosenDress);
+            dataList.push(item);
         }
-        store.save(key, list);
+        store.save('dress', dataList);
     },
 
-    seen(key) {
-        let list = store.get(key);
-
-        if(list) {
-            list = {};
-        }
-        return list;
+    getDress(id) {
+        const dresses = store.getDresses();
+        const dress = getById(dresses, id);
     },
 
-    addToSeen(array, key) {
-        const seenList = store.seen(key);
-    
-        for(let i = 0; i < array.length; i++) {
-            let seenDress = array[i];
+    getById(dresses, id) {
+        for (let i = 0; i < dresses.length; i++) {
+            const product = dresses[i];
 
-            if(seenList[seenDress.id] === 'undefined') {
-                seenList[seenDress.id] = 1;
-                seenList[seenDress.id]++;
-            } else {
-                seenList[seenDress.id]++;
+            if (product.id === id) {
+                return product;
             }
         }
-        store.save(key, seenList);
     },
-    addToLastSeen(input1, input2, input3) {
-        store.save('last-shown', [{ id:input1, quantity: 1 }, { id: input2, quantity: 1 }, { id: input3, quantity: 1 }]);
+
+    incrementSelectedCount(dataList, id) {
+        let item = store.getById(dataList, id);
+        console.log(dataList)
+        item.clicks++;
     }
 };
 

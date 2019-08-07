@@ -21,22 +21,22 @@ function renderOutput(clickId, dress) {
 
     const label2 = document.createElement('label');
     label2.className = 'data label1';
-    label2.textContent = 'Clicked: ';
+    label2.textContent = 'Shown: ';
     li.appendChild(label2);
 
     const span1 = document.createElement('span');
-    span1.id = 'clicked';
-    span1.textContent = clickId.clicks;
+    span1.id = 'shown';
+    span1.textContent = clickId.shown;
     label2.appendChild(span1);
 
     const label3 = document.createElement('label');
     label3.className = 'data label2';
-    label3.textContent = 'Percentage Clicked When Shown: ';
+    label3.textContent = 'Clicked: ';
     li.appendChild(label3);
 
     const span2 = document.createElement('span');
-    span2.id = 'percentage';
-    span2.textContent = clickId.percent;
+    span2.id = 'clicks';
+    span2.textContent = clickId.clicks;
     label3.appendChild(span2);
 
     return li;
