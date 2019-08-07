@@ -34,41 +34,42 @@ const store = {
     },
 
     addToResultsList(id) {
-        const dataList = store.getDresses()
-        const item = store.getById(dataList, id);
+        let arr = store.getDressArr();
+        let item = store.getById(arr, id);
 
         if (item) {
             item.shown++;
         } else {
-            const item = {
+            item = {
                 id: id,
                 shown: 1,
                 clicks: 0
             };
-            dataList.push(item);
+            arr.push(item);
         }
-        store.save('dress', dataList);
+        store.save('dress', arr);
     },
 
     getDress(id) {
         const dresses = store.getDresses();
         const dress = getById(dresses, id);
+
+        return dress;
     },
 
     getById(dresses, id) {
         for (let i = 0; i < dresses.length; i++) {
-            const product = dresses[i];
+            const dress = dresses[i];
 
-            if (product.id === id) {
-                return product;
+            if (dress.id === id) {
+                return dress;
             }
         }
     },
 
-    incrementSelectedCount(dataList, id) {
-        let item = store.getById(dataList, id);
-        console.log(dataList)
-        item.clicks++;
+    incrementSelectedCount(id) {
+        let dress = store.getDress(id);
+        dress.clicks++;
     }
 };
 

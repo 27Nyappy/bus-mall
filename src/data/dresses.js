@@ -1,7 +1,7 @@
 const casualBlackDress = {
         id: 'casual-black-dress',
         name: 'Casual Black Dress',
-        image: 'assets/dress1.jpg'
+        image: 'assets/dress1.jpg',
     };
 
     const casualBlackRedDress = {

@@ -26,3 +26,47 @@ test('gets products with bootstrapped default', (assert) => {
 
     assert.deepEqual(dresses, dressData);
 });
+
+test('gets dress array', assert => {
+    const arr = store.getDressArr();
+
+    assert.deepEqual(arr, []);
+});
+
+test('adds dress to result list', assert => {
+    const id = 'casual-black-dress';
+    const expected = [{
+        id: 'casual-black-dress',
+        shown: 1,
+        clicks: 0
+    }];
+
+    store.addToResultsList(id);
+    const arr = store.getDressArr();
+
+    assert.deepEqual(arr, expected);
+});
+
+test('adds dress to result list', assert => {
+    const id = 'casual-black-dress';
+    const expected = [{
+        id: 'casual-black-dress',
+        shown: 2,
+        clicks: 0
+    }];
+
+    store.addToResultsList(id);
+    store.addToResultsList(id);
+    const arr = store.getDressArr();
+
+    assert.deepEqual(arr, expected);
+})
+
+test('get dress', assert => {
+    const id = 'casual-black-dress';
+    const expected = dresses[0];
+
+    const dress = store.getDresses(id);
+
+    assert.deepEqual(dress, expected);
+});
