@@ -38,7 +38,6 @@ test('adds dress to result list', assert => {
     const expected = [{
         id: 'casual-black-dress',
         shown: 1,
-        clicks: 0
     }];
 
     store.addToResultsList(id);
@@ -52,7 +51,6 @@ test('adds dress to result list', assert => {
     const expected = [{
         id: 'casual-black-dress',
         shown: 2,
-        clicks: 0
     }];
 
     store.addToResultsList(id);
@@ -78,9 +76,25 @@ test('get by id', assert => {
         id: 'casual-black-dress',
         name: 'Casual Black Dress',
         image: 'assets/dress1.jpg',
+        shown: 0,
+        clicks: 0
     };
 
     const gotDress = store.getById(dressData, id);
 
     assert.deepEqual(gotDress, expected);
-})
+});
+
+test('adds dress to result list', assert => {
+    const id = 'casual-black-dress';
+    const expected = [{
+        id: 'casual-black-dress',
+        shown: 1,
+        clicks: 1,
+    }];
+
+    store.addClicks(id);
+    const arr = store.getDressArr();
+
+    assert.deepEqual(arr, expected);
+});

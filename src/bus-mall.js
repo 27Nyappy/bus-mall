@@ -15,7 +15,8 @@ const percentageDisplay = document.getElementById('percentage');
 let turns = 25;
 
 let newDress = new DressCombination(dresses);
-const resultsList = new DressCombination([]);
+const arr = store.getDressArr();
+const items = store.getDresses();
 
 pageLoad();
 
@@ -36,15 +37,15 @@ function shuffle() {
     for (let i = 0; i < 3; i++) {
         let product = newDress.getRandomDress();
         const dress = renderDresses(product);
+        store.addToResultsList(product.id);
         dressChoices.appendChild(dress);
         newDress.removeById(product.id);
     }
 
-
     for (let i = 0; i < radioInputs.length; i++) {
         radioInputs[i].addEventListener('click', () => {
             turns--;
-            store.incrementSelectedCount(resultsList, radioInputs.value);
+            store.addClicks(radioInputs[i].value);
             removeDresses();
             shuffle();
         });
@@ -61,8 +62,10 @@ function renderClicks() {
     statistics.classList.remove('hidden');
     dressChoices.classList.add('hidden');
 
-    for(let i = 0; i < resultsList.list.length; i++) {
-        const item = renderOutput(resultsList.list[i]);
-        seen.appendChild(item);
+    for (let i = 0; i < arr.length; i++) {
+        const item = arr[i];
+        const vestido = store.getDresses(item.id);
+        const dom = renderOutput(item, vestido);
+        seen.appendChild(dom);
     }
 }

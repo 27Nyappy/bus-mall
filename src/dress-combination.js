@@ -13,9 +13,9 @@ class dressCombination {
 
     removeById(dressId) {
         const list = this.list;
-        for(let i = 0; i < list.length; i++) {
+        for (let i = 0; i < list.length; i++) {
             const dress = list[i];
-            if(dress.id === dressId) {
+            if (dress.id === dressId) {
                 list.splice(i, 1);
                 return;
             }

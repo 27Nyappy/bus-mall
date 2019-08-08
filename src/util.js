@@ -3,16 +3,6 @@ export function getRandom(length) {
     return Math.floor(Math.random() * length);
 }
 
-export function findDress(dress, id) {
-    for(let i = 0; i < dress.length; i++) {
-        const dress = dress[i];
-
-        if(dress.id === id) {
-            return dress;
-        }
-    }
-}
-
 export function outputCalc(clickId) {
     const percentCalc = Math.floor((clickId.clicks / clickId.views) * 100);
     const percent = `${percentCalc}%`;

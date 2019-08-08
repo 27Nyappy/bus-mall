@@ -43,7 +43,6 @@ const store = {
             const item = {
                 id: id,
                 shown: 1,
-                clicks: 0
             };
             arr.push(item);
         }
@@ -67,10 +66,22 @@ const store = {
         }
     },
 
-    incrementSelectedCount(id) {
-        let dress = store.getDress(id);
-        dress.clicks++;
-    }
+    addClicks(id) {
+        const arr = store.getDressArr();
+        const item = store.getById(arr, id);
+
+        if (item) {
+            item.clicks++;
+        } else {
+            const item = {
+                id: id,
+                shown: 1,
+                clicks: 1,
+            };
+            arr.push(item);
+        }
+        store.save('arr', arr);
+    },
 };
 
 export default store;

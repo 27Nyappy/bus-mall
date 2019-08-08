@@ -6,7 +6,7 @@ const test = QUnit.test;
 QUnit.module('render output');
 
 test('render output', (assert) => {
-    const clickId = { id: 'casual-black-dress', image: 'assets/dress1.jpg', shown: 0, clicks: 0};
+    const clickId = { id: 'casual-black-dress', image: 'assets/dress1.jpg', shown: 0, clicks: 0 };
     const dress = { name: 'Casual Black Dress' };
     const expected = '<li><label class="data"><p>Image:</p><img class="image-clicks" src="assets/dress1.jpg" alt="Casual Black Dress Image"></label><label class="data label1">Shown: <span id="shown">0</span></label><label class="data label2">Clicked: <span id="clicks">0</span></label></li>';
 
