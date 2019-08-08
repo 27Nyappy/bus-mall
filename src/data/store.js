@@ -17,8 +17,8 @@ const store = {
     getDresses() {
         let dress = store.get('dress');
 
-        if (!dress) {
-            store.save('dress', dressesData)
+        if(!dress) {
+            store.save('dress', dressesData);
             dress = dressesData;
         }
         return dress;
@@ -27,7 +27,7 @@ const store = {
     getDressArr() {
         let arr = store.get('arr');
 
-        if (!arr) {
+        if(!arr) {
             arr = [];
         }
         return arr;
@@ -37,7 +37,7 @@ const store = {
         const arr = store.getDressArr();
         const item = store.getById(arr, id);
 
-        if (item) {
+        if(item) {
             item.shown++;
         } else {
             const item = {
@@ -57,10 +57,10 @@ const store = {
     },
 
     getById(dressesData, id) {
-        for (let i = 0; i < dressesData.length; i++) {
+        for(let i = 0; i < dressesData.length; i++) {
             const dress = dressesData[i];
 
-            if (dress.id === id) {
+            if(dress.id === id) {
                 return dress;
             }
         }
@@ -70,7 +70,7 @@ const store = {
         const arr = store.getDressArr();
         const item = store.getById(arr, id);
 
-        if (item) {
+        if(item) {
             item.clicks++;
         } else {
             const item = {

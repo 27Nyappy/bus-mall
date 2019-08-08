@@ -8,7 +8,7 @@ function renderDresses(item) {
     const input = document.createElement('input');
     input.name = 'dress';
     input.type = 'radio';
-    input.className = 'dressy'
+    input.className = 'dressy';
     input.value = item.id;
     label.appendChild(input);
 

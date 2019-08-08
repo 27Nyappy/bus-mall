@@ -33,7 +33,7 @@ test('gets dress array', assert => {
     assert.deepEqual(arr, []);
 });
 
-test('adds dress to result list', assert => {
+test('adds seen to result list', assert => {
     const id = 'casual-black-dress';
     const expected = [{
         id: 'casual-black-dress',
@@ -46,7 +46,7 @@ test('adds dress to result list', assert => {
     assert.deepEqual(arr, expected);
 });
 
-test('adds dress to result list', assert => {
+test('adds seen to result list', assert => {
     const id = 'casual-black-dress';
     const expected = [{
         id: 'casual-black-dress',
@@ -58,7 +58,7 @@ test('adds dress to result list', assert => {
     const arr = store.getDressArr();
 
     assert.deepEqual(arr, expected);
-})
+});
 
 test('get dress', assert => {
     const id = 'casual-black-dress';
@@ -85,7 +85,7 @@ test('get by id', assert => {
     assert.deepEqual(gotDress, expected);
 });
 
-test('adds dress to result list', assert => {
+test('adds clicks to result list', assert => {
     const id = 'casual-black-dress';
     const expected = [{
         id: 'casual-black-dress',
