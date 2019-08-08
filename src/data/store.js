@@ -1,4 +1,4 @@
-import dressData from './dresses.js';
+import dressesData from './dresses.js';
 
 const store = {
     storage: window.localStorage,
@@ -15,13 +15,13 @@ const store = {
     },
 
     getDresses() {
-        let dresses = store.get('dress');
+        let dress = store.get('dress');
 
-        if (!dresses) {
-            store.save('dress', dressData)
-            dresses = dressData
+        if (!dress) {
+            store.save('dress', dressesData)
+            dress = dressesData;
         }
-        return dresses;
+        return dress;
     },
 
     getDressArr() {
@@ -34,32 +34,32 @@ const store = {
     },
 
     addToResultsList(id) {
-        let arr = store.getDressArr();
-        let item = store.getById(arr, id);
+        const arr = store.getDressArr();
+        const item = store.getById(arr, id);
 
         if (item) {
             item.shown++;
         } else {
-            item = {
+            const item = {
                 id: id,
                 shown: 1,
                 clicks: 0
             };
             arr.push(item);
         }
-        store.save('dress', arr);
+        store.save('arr', arr);
     },
 
     getDress(id) {
         const dresses = store.getDresses();
-        const dress = getById(dresses, id);
+        const dress = store.getById(dresses, id);
 
         return dress;
     },
 
-    getById(dresses, id) {
-        for (let i = 0; i < dresses.length; i++) {
-            const dress = dresses[i];
+    getById(dressesData, id) {
+        for (let i = 0; i < dressesData.length; i++) {
+            const dress = dressesData[i];
 
             if (dress.id === id) {
                 return dress;

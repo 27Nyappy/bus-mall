@@ -64,9 +64,23 @@ test('adds dress to result list', assert => {
 
 test('get dress', assert => {
     const id = 'casual-black-dress';
-    const expected = dresses[0];
+    const expected = dressData[0];
 
-    const dress = store.getDresses(id);
+    const dress = store.getDress(id);
 
     assert.deepEqual(dress, expected);
 });
+
+test('get by id', assert => {
+    const id = 'casual-black-dress';
+
+    const expected = {
+        id: 'casual-black-dress',
+        name: 'Casual Black Dress',
+        image: 'assets/dress1.jpg',
+    };
+
+    const gotDress = store.getById(dressData, id);
+
+    assert.deepEqual(gotDress, expected);
+})
