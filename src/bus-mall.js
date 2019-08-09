@@ -1,7 +1,6 @@
 import store from './data/store.js';
 import dresses from './data/dresses.js';
 import DressCombination from './dress-combination.js';
-import { outputCalc } from './util.js';
 import renderOutput from './output.js';
 import renderDresses from './dress-display.js';
 
@@ -9,13 +8,10 @@ const radioInputs = document.getElementsByClassName('dressy');
 const dressChoices = document.getElementById('img-div');
 const statistics = document.getElementById('click-data');
 const seen = document.getElementById('seen');
-const clickCount = document.getElementById('clicked');
-const percentageDisplay = document.getElementById('percentage');
 
 let turns = 25;
 
 let newDress = new DressCombination(dresses);
-const arr = store.getDressArr();
 
 pageLoad();
 
@@ -59,13 +55,12 @@ function removeDresses() {
 
 function renderClicks() {
     statistics.classList.remove('hidden');
-    dressChoices.classList.add('hidden');
+    dressChoices.classList.add('none');
     const vestido = store.getDresses();
 
     for(let i = 0; i < vestido.length; i++) {
         const item = vestido[i];
-        console.log(item)
         const dom = renderOutput(item, item);
         seen.appendChild(dom);
-    }
+    };
 }

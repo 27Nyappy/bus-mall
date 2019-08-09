@@ -45,6 +45,10 @@ input:checked + .image {
     border: 3px solid rgb(241, 107, 18);
 }
 
+ul {
+    padding: 0;
+}
+
 label {
     width: 200px;
     height: 200px;
@@ -57,6 +61,7 @@ label {
     margin-right: 16px;
     cursor: pointer;
     border: 2px solid rgb(224, 178, 50);
+    border-radius: 3px;
 }
 
 .image:hover {
@@ -80,22 +85,27 @@ label {
     visibility: hidden;
 }
 
+.none {
+    display: none !important;
+}
+
 li {
     list-style: none;
-    display: inline;
+    display: inline-block;
     margin: auto;
-    margin-right: 20px;
 }
 
 p {
     float: left;
-    margin-top: 2px;
+    margin-top: 0px;
+    margin-right: 5px;
 }
 
 .image-clicks {
     padding-left: 4x;
     width: 90px;
     height: 160px;
+    border-radius: 3px;
 }
 
 .label1 {

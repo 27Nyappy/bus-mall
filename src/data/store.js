@@ -17,7 +17,7 @@ const store = {
     getDresses() {
         let dress = store.get('dress');
 
-        if (!dress) {
+        if(!dress) {
             store.save('dress', dressesData);
             dress = dressesData;
         }
@@ -27,7 +27,7 @@ const store = {
     getDressArr() {
         let arr = store.get('arr');
 
-        if (!arr) {
+        if(!arr) {
             arr = [];
         }
         return arr;
@@ -35,8 +35,8 @@ const store = {
 
     addToResultsList(id) {
         let dresses = store.getDresses();
-        for (let i = 0; i < dresses.length; i++) {
-            if (dresses[i].id === id) {
+        for(let i = 0; i < dresses.length; i++) {
+            if(dresses[i].id === id) {
                 dresses[i].shown++;
             }
         }
@@ -45,8 +45,8 @@ const store = {
 
     addClicks(id) {
         let dresses = store.getDresses();
-        for (let i = 0; i < dresses.length; i++) {
-            if (dresses[i].id === id) {
+        for(let i = 0; i < dresses.length; i++) {
+            if(dresses[i].id === id) {
                 dresses[i].clicks++;
             }
         }

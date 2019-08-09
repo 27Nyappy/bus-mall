@@ -1,7 +1,4 @@
-import { outputCalc } from './util.js';
-
 function renderOutput(shows, dress) {
-    const calc = outputCalc(shows);
 
     const li = document.createElement('li');
 
@@ -10,7 +7,7 @@ function renderOutput(shows, dress) {
     li.appendChild(label1);
 
     const p = document.createElement('p');
-    p.textContent = 'Image:';
+    p.textContent = 'Dress:';
     label1.appendChild(p);
 
     const img = document.createElement('img');
