@@ -60,11 +60,12 @@ function removeDresses() {
 function renderClicks() {
     statistics.classList.remove('hidden');
     dressChoices.classList.add('hidden');
+    const vestido = store.getDresses();
 
-    for(let i = 0; i < arr.length; i++) {
-        const item = arr[i];
-        const vestido = store.getDresses(item.id);
-        const dom = renderOutput(item, vestido);
+    for(let i = 0; i < vestido.length; i++) {
+        const item = vestido[i];
+        console.log(item)
+        const dom = renderOutput(item, item);
         seen.appendChild(dom);
     }
 }

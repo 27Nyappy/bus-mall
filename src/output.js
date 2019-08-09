@@ -1,7 +1,7 @@
 import { outputCalc } from './util.js';
 
-function renderOutput(clickId, dress) {
-    const calc = outputCalc(clickId);
+function renderOutput(shows, dress) {
+    const calc = outputCalc(shows);
 
     const li = document.createElement('li');
 
@@ -15,7 +15,7 @@ function renderOutput(clickId, dress) {
 
     const img = document.createElement('img');
     img.className = 'image-clicks';
-    img.src = clickId.image;
+    img.src = dress.image;
     img.alt = dress.name + ' Image';
     label1.appendChild(img);
 
@@ -26,7 +26,7 @@ function renderOutput(clickId, dress) {
 
     const span1 = document.createElement('span');
     span1.id = 'shown';
-    span1.textContent = clickId.shown;
+    span1.textContent = shows.shown;
     label2.appendChild(span1);
 
     const label3 = document.createElement('label');
@@ -36,7 +36,7 @@ function renderOutput(clickId, dress) {
 
     const span2 = document.createElement('span');
     span2.id = 'clicks';
-    span2.textContent = clickId.clicks;
+    span2.textContent = shows.clicks;
     label3.appendChild(span2);
 
     return li;

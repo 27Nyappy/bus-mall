@@ -17,7 +17,7 @@ const store = {
     getDresses() {
         let dress = store.get('dress');
 
-        if(!dress) {
+        if (!dress) {
             store.save('dress', dressesData);
             dress = dressesData;
         }
@@ -27,60 +27,30 @@ const store = {
     getDressArr() {
         let arr = store.get('arr');
 
-        if(!arr) {
+        if (!arr) {
             arr = [];
         }
         return arr;
     },
 
     addToResultsList(id) {
-        const arr = store.getDressArr();
-        const item = store.getById(arr, id);
-
-        if(item) {
-            item.shown++;
-        } else {
-            const item = {
-                id: id,
-                shown: 1,
-            };
-            arr.push(item);
-        }
-        store.save('arr', arr);
-    },
-
-    getDress(id) {
-        const dresses = store.getDresses();
-        const dress = store.getById(dresses, id);
-
-        return dress;
-    },
-
-    getById(dressesData, id) {
-        for(let i = 0; i < dressesData.length; i++) {
-            const dress = dressesData[i];
-
-            if(dress.id === id) {
-                return dress;
+        let dresses = store.getDresses();
+        for (let i = 0; i < dresses.length; i++) {
+            if (dresses[i].id === id) {
+                dresses[i].shown++;
             }
         }
+        store.save('dress', dresses);
     },
 
     addClicks(id) {
-        const arr = store.getDressArr();
-        const item = store.getById(arr, id);
-
-        if(item) {
-            item.clicks++;
-        } else {
-            const item = {
-                id: id,
-                shown: 1,
-                clicks: 1,
-            };
-            arr.push(item);
+        let dresses = store.getDresses();
+        for (let i = 0; i < dresses.length; i++) {
+            if (dresses[i].id === id) {
+                dresses[i].clicks++;
+            }
         }
-        store.save('arr', arr);
+        store.save('dress', dresses);
     },
 };
 
