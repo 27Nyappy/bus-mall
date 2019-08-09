@@ -62,5 +62,5 @@ function renderClicks() {
         const item = vestido[i];
         const dom = renderOutput(item, item);
         seen.appendChild(dom);
-    };
+    }
 }
